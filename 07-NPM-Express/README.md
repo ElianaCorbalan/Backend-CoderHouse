@@ -1,5 +1,5 @@
 # Manejo de archivos
-##Desafio 06
+##Desafio 07
 
 * Proyecto de servidor basado en node.js que utiliza el middleware express e implementa tres endpoints en el puerto 8080:
 
