@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contructor Class</title>
+</head>
+<body>
+    <h1>Contructor Class ES6</h1>
+    <p>Ejercicio 2</p>
+</body>
+</html>
+
+
+<script>
+
+let nombre = "Eliana"
+let apellido = "Corbalan"
+let libros = [{nombre: 'La casa de paplel', autor: 'Ni idea'},{nombre: 'Masha y el oso', autor: 'Krosis'}];
+let mascotas = ["Pepe", "Tony", "Byte"];
+
+class Usuario {
+    constructor (nombre, apellido, libros, mascotas) {
+    this.nombre = nombre;
+    this.apellido=apellido;
+    this.libros=libros;
+    this.mascotas=mascotas;
+    }
+    getFullName () {
+        return `${this.nombre} ${this.apellido} `;
+    }
+    addMascota (m) {
+        this.mascotas.push(m);
+    }
+    getMascotas () {
+        return this.mascotas.length;
+    }
+
+    addBook (nombre,autor) {
+        this.libros.push({nombre:nombre ,autor:autor});  
+    }
+    getBooks () {
+        return this.libros.map( (libro) => libro.nombre )
+    }
+}
+
+let persona = new Usuario (nombre, apellido, libros, mascotas);
+
+console.log(persona);
+console.log('el nombre completo es '+ persona.getFullName());
+persona.addMascota('michy');
+console.log(persona.mascotas);
+console.log(persona.getMascotas());
+persona.addBook("book","autor");
+console.log(persona.libros);
+console.log(persona.getBooks());
+
+</script>

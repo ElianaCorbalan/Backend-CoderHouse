@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Calculadora",
+		"price": 234.56,
+		"thumbnail": "https://foo.png",
+		"id": 1
+	},
+	{
+		"title": "Globo Terráqueo",
+		"price": 345.67,
+		"thumbnail": "https://foo.png",
+		"id": 2
+	},
+	{
+		"title": "Lapicera",
+		"price": 20,
+		"thumbnail": "https://foo.png",
+		"id": 3
+	},
+	{
+		"title": "Colores",
+		"price": 300,
+		"thumbnail": "https://foo.png",
+		"id": 4
+	}
+]
