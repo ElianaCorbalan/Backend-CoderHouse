@@ -1,29 +1,42 @@
-const express = require('express');
-let producto=require('./productos');
-// creo una app de tipo express
-const app = express();
+const express=require('express');
+const app=express();
+
 const puerto = 8080;
+let producto=require('./productos');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(__dirname + '/public'))
-let router = express.Router()
-app.use('/api', router)
+app.use('/', express.static(__dirname + '/public'));
+let router = express.Router();
+app.use('/', router)
 
-// listar
-router.get('/productos',(req,res)=>{
-    res.send(producto.listaProductos)
-})
+
+// Motor de plantilla
+const hbs = require('hbs');
+hbs.registerPartials(__dirname + '/views/partials', function (err) {});
+app.set('view engine', 'hbs');
+
+
+
+app.get('/',(req,res)=>{
+    res.render('index')
+});
+
+//Mostrar productos
+app.get('/productos',(req,res)=>{
+    res.render('productos', {productos: producto.listaProductos})
+});
 
 // listar por ID
 router.get('/productos/:id', (req, res) => {
-    res.send(producto.buscarId(req.params.id))
+    res.render('productos', { productos: producto.buscarId(req.params.id)})
 });
+
 
 // incorporar una nuevo producto
 router.post('/productos', (req, res) => {
-    let id = producto.nuevoProducto(req.body)
-    res.send(producto.buscarId(id))
+    producto.nuevoProducto(req.body)
+    res.render('productos',{productos: producto.listaProductos})
 });
 
 // Editar/ Actualizar
