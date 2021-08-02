@@ -5,8 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc server.ts && node server.js",
-    "ES6-to-JS5": "server.js",
-    "JS5-to-ES6": "server.js"
+    "serverES6toJS5": "server.js",
+    "serverTStoJS5": "server.js"
   },
   "author": "",
   "license": "ISC",
