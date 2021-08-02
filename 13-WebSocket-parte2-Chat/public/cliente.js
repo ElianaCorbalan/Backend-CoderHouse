@@ -53,9 +53,6 @@ function render(dato) {
     document.getElementById('messages').innerHTML = html;
 }
 
-
-
-
 function addMessages() {
     var mensaje = {
         author: document.getElementById('author').value,
