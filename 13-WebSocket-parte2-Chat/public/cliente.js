@@ -47,7 +47,7 @@ function render(dato) {
         return (`<div>
                 <strong>${element.author}</strong>:
                 <em>${element.text}</em>
-                <em>${element.date}</em>
+                <em class="text-success">${element.date}</em>
                 </div>`)
     }).join('');
     document.getElementById('messages').innerHTML = html;
